@@ -17,6 +17,7 @@
 
 #define MAX_LEN 100
 
+// Function to calculate the length of a string
 size_t StringLen(const char *str){
     size_t count = 0;
 
@@ -26,6 +27,7 @@ size_t StringLen(const char *str){
     return count;
 }
 
+// Function to reverse a string
 void StringReverse(char *str){
     size_t len = StringLen(str);
     if(len > 0){
@@ -41,19 +43,26 @@ int main(void){
 
     char userInput[MAX_LEN];
     printf("Enter a string: ");
-
+    // Read the input string
     if(fgets(userInput, MAX_LEN, stdin) != NULL){
+        // Calculate the length of the input string
         size_t len = StringLen(userInput);
+        // Remove new line character if present
         if(len > 0 && userInput[len - 1] == '\n'){
             userInput[len - 1] = '\0';
             len--;
         }
+        // Print original string
         printf("Original: %s\n", userInput);
+        // Calling the reverse string function
         StringReverse(userInput);
+        // Print reversed string
         printf("Reversed: %s\n", userInput);
+        // Print the length of the string
         printf("Length: %zu\n", len);
 
     }else{
+        // Error message if input fails
         perror("Error reading input");
     }
 
