@@ -1,9 +1,3 @@
-/*
-Description:
-Write a program that checks if a given string is a palindrome. A palindrome is a string that reads the same forwards and backwards (ignoring spaces, punctuation, and case).
-
-*/
-
 #include <stdio.h>
 
 #define MAX_LEN 100
